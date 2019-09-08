@@ -25,41 +25,70 @@ If there would be no savings, no message should be printed.
 /*
 --Variables and Constants--
 
-Declare Constants A, B, and C.
 Declare Constants for baseA, baseB, and baseC.
 Declare Constants for overage prices for each package:
-    overA = 42 * 2.00.
-    overB = 32 * 1.00.
-Declare variable userPackage.
-Declare variables for packATotal, packBTotal, and packCTotal.
+    overA = 32 * 2.00.
+    overB = 22 * 1.00.
+Declare variables for packATotal, packBTotal.
 Declare variables for packBSavings, packCSavingsA, and packCSavingsB.
 
 --Calculations--
 Calculate each package total:
     packATotal = baseA + overA.
     packBTotal = baseB + overB.
-    packCTotal = baseC.
 Calculate Savings:
     packBSavings = packATotal - packBTotal.
-    packCSavingsA = packATotal - packCTotal.
-    packCSavingsB = packBTotal - packCTotal.
+    packCSavingsA = packATotal - baseC.
+    packCSavingsB = packBTotal - baseC.
     
 --Displaying Values--
-Display "Your Spectrum Bill can be broken down as such."
+Display "Your Spectrum Bill can be understood as such."
 Display "**These totals assume an average of 52 hours of usage per month**"
 
-Display "Which Package type do you have? Please enter the letter of your package!"
-Input userPackage.
-
-if userPackage is a or A:
+if userPackage is A:
     Display `Monthly you would pay ${packATotal}`
     Display `You could be saving ${packBSavings} with Package B.`
     Display `You could be saving ${packCSavingsA} with Package C!`
-if userPackage is b or B:
+if userPackage is B:
     Display `Monthly you would pay ${packBTotal}`
     Display `You could be saving #{packCSavingsB} with Package C!`
-if userPackage is c or C:
-    Display `Monthly you would pay ${$packCTotal}`
+if userPackage is C:
+    Display `Monthly you would pay ${baseC}`
     
 Display "Thank you for being a valued customer!"
 */
+
+// Variables and Constants
+const baseA = 19.95;
+const baseB = 24.95;
+const baseC = 29.95;
+const overA = 32 * 2.00;
+const overB = 22 * 1.00;
+var packATotal, packBTotal,  packCTotal;
+var packBSavings, packCSavingsA, packCSavingsB;
+
+// Calculations
+packATotal = baseA + overA;
+packBTotal = baseB + overB;
+
+packBSavings = packATotal - packBTotal;
+packCSavingsA = packATotal - baseC;
+packCSavingsB = packBTotal - baseC;
+
+// Display Values
+console.log("Your Spectrum bill can be understood as such.");
+console.log("**These totals assume an average of 52 hours of usage per month**");
+
+console.log("\nIf your Package is A:");
+console.log(`\tMonthly you would pay \$${packATotal.toFixed(2)}`);
+console.log(`\tYou could be saving \$${packBSavings.toFixed(2)} with Package B.`);
+console.log(`\tYou could be saving \$${packCSavingsA.toFixed(2)} with Package C!`);
+
+console.log("\nIf your Package is B:");
+console.log(`\tMonthly you would pay \$${packBTotal.toFixed(2)}`);
+console.log(`\tYou could be saving \$${packCSavingsB.toFixed(2)} with Package C!`);
+
+console.log("\nIf your Package is C:");
+console.log(`\tMonthly you would pay \$${baseC.toFixed(2)}`);
+
+console.log("\nThank you for being a valued customer!");
