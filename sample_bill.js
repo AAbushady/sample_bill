@@ -64,7 +64,7 @@ const baseB = 24.95;
 const baseC = 29.95;
 const overA = 32 * 2.00;
 const overB = 22 * 1.00;
-var packATotal, packBTotal,  packCTotal;
+var packATotal, packBTotal, packCTotal;
 var packBSavings, packCSavingsA, packCSavingsB;
 
 // Calculations
