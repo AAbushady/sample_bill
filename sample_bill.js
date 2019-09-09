@@ -29,6 +29,7 @@ Declare Constants for baseA, baseB, and baseC.
 Declare Constants for overage prices for each package:
     overA = 32 * 2.00.
     overB = 22 * 1.00.
+Declare variable userInput as A.
 Declare variables for packATotal, packBTotal.
 Declare variables for packBSavings, packCSavingsA, and packCSavingsB.
 
@@ -64,6 +65,7 @@ const baseB = 24.95;
 const baseC = 29.95;
 const overA = 32 * 2.00;
 const overB = 22 * 1.00;
+var userInput = 'A';
 var packATotal, packBTotal, packCTotal;
 var packBSavings, packCSavingsA, packCSavingsB;
 
@@ -79,16 +81,18 @@ packCSavingsB = packBTotal - baseC;
 console.log("Your Spectrum bill can be understood as such.");
 console.log("**These totals assume an average of 52 hours of usage per month**");
 
-console.log("\nIf your Package is A:");
-console.log(`\tMonthly you would pay \$${packATotal.toFixed(2)}`);
-console.log(`\tYou could be saving \$${packBSavings.toFixed(2)} with Package B.`);
-console.log(`\tYou could be saving \$${packCSavingsA.toFixed(2)} with Package C!`);
-
-console.log("\nIf your Package is B:");
-console.log(`\tMonthly you would pay \$${packBTotal.toFixed(2)}`);
-console.log(`\tYou could be saving \$${packCSavingsB.toFixed(2)} with Package C!`);
-
-console.log("\nIf your Package is C:");
-console.log(`\tMonthly you would pay \$${baseC.toFixed(2)}`);
+if (userInput == 'a' || userInput == 'A') {
+    console.log("\nIf your Package is A:");
+    console.log(`\tMonthly you would pay \$${packATotal.toFixed(2)}`);
+    console.log(`\tYou could be saving \$${packBSavings.toFixed(2)} with Package B.`);
+    console.log(`\tYou could be saving \$${packCSavingsA.toFixed(2)} with Package C!`);
+} else if (userInput == 'b' || userInput == 'B') {
+    console.log("\nIf your Package is B:");
+    console.log(`\tMonthly you would pay \$${packBTotal.toFixed(2)}`);
+    console.log(`\tYou could be saving \$${packCSavingsB.toFixed(2)} with Package C!`);
+} else if (userInput == 'c' || userInput == 'C') {
+    console.log("\nIf your Package is C:");
+    console.log(`\tMonthly you would pay \$${baseC.toFixed(2)}`);
+}
 
 console.log("\nThank you for being a valued customer!");
